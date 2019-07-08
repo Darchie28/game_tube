@@ -9,17 +9,39 @@ body {
   text-align: center;
   font-family: "Open Sans", sans-serif;
   color: white;
-  background-image: url("images/controller.jpg");
-  background-attachment: fixed;
-  background-repeat: contain;
+  background-color: #2e2e2e;
+  /* background-image: url("images/controller.jpg"); */
+  /* background-attachment: fixed;
+  background-repeat: contain; */
 }
+
+.container {
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 h1 {
   font-size: 3rem;
-  font-family: "Aldrich", sans-serif;
+  font-family: "Baloo", cursive;
   padding: 0;
   margin-top: 50px;
   margin-bottom: 5px;
-  color: white;
+  color: #49337f;
+}
+
+h2 {
+  font-family: "Baloo", cursive;
+}
+
+.fa {
+  color: #fff;
+}
+
+#js-form .btn {
+  margin: 0 5px 0 0;
+  border-radius: 3px;
+  color: #49337f;
 }
 
 #users {
@@ -44,7 +66,9 @@ p {
 }
 
 .card-text,
-.btn {
+.btn,
+a {
+  color: #fff;
 }
 
 */ .result-text {
