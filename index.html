@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Top Twitch Games</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- <div class="container">
+      <div class="row">
+        <div class="col"><i class="fab fa-twitch fa-10x"></i></div>
+        <div class="col"></div>
+      </div>
+      <div>
+        <h1>¿Who is streaming?</h1>
+        <hr id="bars" />
+      </div>
+      <div class="row" id="buttons">
+        <div class="col">
+          <button id="ranking" class="btn btn-light">Game ranking</button>
+          <button id="online" class="btn btn-light">Online</button>
+        </div>
+      </div>
+
+      <div class="row" id="games"></div>
+    </div> -->
+
+    <div class="container">
+      <div class="col"><i class="fab fa-twitch fa-5x"></i></div>
+      <h1>Twitch finder</h1>
+
+      <form id="js-form">
+        <button id="ranking" class="btn btn-light">Game ranking</button>
+        <button id="online" class="btn btn-light">Online</button>
+      </form>
+
+      <p id="js-error-message" class="error-message"></p>
+      <section id="results" class="hidden">
+        <h2>Search results</h2>
+        <div id="results-list"></div>
+      </section>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
