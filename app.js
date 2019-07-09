@@ -1,14 +1,10 @@
 // clientID
 // const clientId = "n1ngtfb3jyknsdy5mdgl4zgqft4ekg";
 
-$(document).ready(function() {
-  $("#ranking").click(getDataGames);
-  $("#online").click(getDataStreams);
-});
-
 ("use strict");
 // "Client-ID": "n1ngtfb3jyknsdy5mdgl4zgqft4ekg"
-const searchURL = "https://api.twitch.tv/helix/streams?language=en";
+const streamURL = "https://api.twitch.tv/helix/streams?language=en";
+const gameURL = "https://api.twitch.tv/helix/games/top";
 
 function formatQueryParams(params) {
   const queryItems = Object.keys(params).map(
@@ -17,11 +13,12 @@ function formatQueryParams(params) {
   return queryItems.join("&");
 }
 
+//Streams section
 function displayStreams(responseJson, maxResult) {
   // if there are previous results, remove them
   console.log(responseJson);
   $("#results-list").empty();
-  // iterate through the articles array, stopping at the max number of results
+  // iterate through the json array, stopping at the max number of results
   for (let i = 0; i < responseJson.data.length; i++) {
     $("#results-list").append(
       `<div class="card" style="width: 18rem;">
@@ -60,7 +57,7 @@ function getStreams(query, maxResults = 10) {
     language: "en"
   };
   const queryString = formatQueryParams(params);
-  const url = searchURL + "?" + queryString;
+  const url = streamURL + "?" + queryString;
 
   console.log(url);
 
@@ -83,12 +80,73 @@ function getStreams(query, maxResults = 10) {
     });
 }
 
+//Getting Video Games
+function getGames(query, maxResults = 10) {
+  const params = {
+    q: query,
+    language: "en"
+  };
+  const queryString = formatQueryParams(params);
+  const url = gameURL + "?" + queryString;
+
+  console.log(url);
+
+  const options = {
+    headers: new Headers({
+      "Client-ID": "n1ngtfb3jyknsdy5mdgl4zgqft4ekg"
+    })
+  };
+
+  fetch(url, options)
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error(response.statusText);
+    })
+    .then(responseJson => displayGames(responseJson, maxResults))
+    .catch(err => {
+      $("#js-error-message").text(`Something went wrong: ${err.message}`);
+    });
+}
+
+function displayGames(responseJson, maxResult) {
+  console.log(responseJson);
+  $("#results-list").empty();
+
+  //iterate through object
+  for (let i = 0; i < responseJson.data.length; i++) {
+    let rank = 1;
+    $("#results-list").append(
+      `
+      <div class="card" style="width: 18rem;">
+      <img src="${responseJson.data[i].box_art_url
+        .replace("{width}", "200")
+        .replace("{height}", "200")}" class="card-img-top"
+        alt="json_img">
+        
+        <div class="card-body">
+        <h5 class="card-title>${rank}</h5>
+        <p class="card-text">${responseJson.data[i].name}
+        <a href="https://www.twitch.tv/directory/game/${
+          responseJson.data[i].name
+        }" target="_blank" class="btn btn-primary">${
+        responseJson.data[i].name
+      }</a>
+        </p>
+        </div>
+        </div>`
+    );
+    rank++;
+  }
+  $("#results").removeClass("hidden");
+}
+
 function watchForm() {
   $("form").submit(event => {
     event.preventDefault();
-    const searchTerm = $("#ranking").val();
-    const maxResults = $("#online").val();
-    getStreams(searchTerm, maxResults);
+    $("#ranking").click(getGames);
+    $("#online").click(getStreams);
   });
 }
 
