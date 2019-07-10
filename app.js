@@ -25,9 +25,12 @@ function displayYoutube(responseJson, maxResult) {
   $("#results-list").empty();
   // iterate through the json array, stopping at the max number of results
   for (let i = 0; i < responseJson.items.length; i++) {
+    let videoId = responseJson.items[i].id.videoId;
     $("#results-list").append(
-      `<li><h3>${responseJson.items[i].snippet.title}</h3>
-      <p>${responseJson.items[i].snippet.description}</p>
+      `<li class="videoList"><div>
+      <h3> ${responseJson.items[i].snippet.title}</h3>
+      <p><a target="_blank" href="https://www.youtube.com/embed/${videoId}"> Video</a></p>
+      <p>${responseJson.items[i].snippet.description}</p></div>
       <img src='${responseJson.items[i].snippet.thumbnails.default.url}'>
       </li>`
     );
@@ -41,7 +44,7 @@ function getYouTubeVideos(query, maxResults = 10) {
   const params = {
     key: apiKey,
     q: query,
-    part: "snippet",
+    part: "snippet, id",
     maxResults,
     type: "video"
   };
