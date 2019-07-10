@@ -29,7 +29,7 @@ function displayYoutube(responseJson, maxResult) {
     $("#results-list").append(
       `<li class="videoList"><div>
       <h3> ${responseJson.items[i].snippet.title}</h3>
-      <p><a target="_blank" href="https://www.youtube.com/embed/${videoId}"> Video</a></p>
+      <p><a target="_blank" href="https://www.youtube.com/embed/${videoId}"> Twitch TV</a></p>
       <p>${responseJson.items[i].snippet.description}</p></div>
       <img src='${responseJson.items[i].snippet.thumbnails.default.url}'>
       </li>`
@@ -74,15 +74,15 @@ function displayStreams(responseJson, maxResult) {
   // iterate through the json array, stopping at the max number of results
   for (let i = 0; i < responseJson.data.length; i++) {
     $("#results-list").append(
-      `<div class="card" style="width: 18rem;">
+      `<div class="stream-card" style="width: 18rem;">
+        <div class="card-container">
                   <img src="${responseJson.data[i].thumbnail_url
                     .replace("{width}", "200")
                     .replace(
                       "{height}",
                       "200"
                     )}" class="card-img-top" alt="...">
-                       <div class="card-body">
-                           
+                       <div class="streamer-card-body">
                            <p class="card-text">${
                              responseJson.data[i].user_name
                            } is streaming<b>:${
@@ -95,6 +95,7 @@ function displayStreams(responseJson, maxResult) {
                            }" target="_blank" class="btn btn-primary">Channel ${
         responseJson.data[i].user_name
       }</a>
+      </div>
                        </div>
               </div>`
     );
@@ -172,13 +173,13 @@ function displayGames(responseJson, maxResult) {
     let rank = 1;
     $("#results-list").append(
       `
-      <div class="card" style="width: 18rem;">
+      <div class="game-card" style="width: 18rem;">
       <img src="${responseJson.data[i].box_art_url
         .replace("{width}", "200")
         .replace("{height}", "200")}" class="card-img-top"
         alt="json_img">
         
-        <div class="card-body">
+        <div class="game-card-body">
         <h5 class="card-title>${rank}</h5>
         <p class="card-text">${responseJson.data[i].name}
         <a href="https://www.twitch.tv/directory/game/${

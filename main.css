@@ -9,10 +9,11 @@ body {
   text-align: center;
   font-family: "Open Sans", sans-serif;
   color: white;
-  background-color: #2e2e2e;
-  /* background-image: url("images/controller.jpg"); */
-  /* background-attachment: fixed;
-  background-repeat: contain; */
+  /* background-color: #2e2e2e; */
+  background-image: url("images/gaming.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container {
@@ -22,22 +23,42 @@ body {
   text-align: center;
 }
 
-#header {
-  align-items: center;
+.fa {
+  color: #fff;
+}
+
+.head .fa {
+  margin-right: 2rem;
 }
 
 h1 {
   font-size: 3rem;
   font-family: "Baloo", cursive;
   padding: 0;
-  margin-top: 50px;
   margin-bottom: 5px;
   color: #49337f;
+}
+
+h2 {
+  font-family: "Russo One", sans-serif;
+  color: #49337f;
+  color: #ff5959;
+}
+
+label {
+  font-family: "Russo One", sans-serif;
+}
+
+input[type="number"] {
+  width: 2.5rem;
 }
 
 button,
 input[type="text"] {
   padding: 5px;
+  margin-bottom: 2rem;
+  border-radius: 3px;
+  font-family: "Russo One", sans-serif;
 }
 
 button:hover {
@@ -58,6 +79,64 @@ button:hover {
 }
 
 /* JS classes */
+/* Style for Streamers */
+.stream.card {
+  align-items: center;
+  border: 2px solid white;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  margin-right: 90px;
+  margin-left: 90px;
+}
+
+.card-container {
+  margin-right: 2rem;
+  align-items: center;
+  justify-content: center;
+  max-height: 30rem;
+}
+
+.streamer-card-body {
+  background-color: #e8e8e8;
+  width: 80%;
+  max-height: 10rem;
+  margin-left: 1.5rem;
+}
+
+.streamer-card-body a {
+  font-family: "Russo One", sans-serif;
+}
+
+.card-text {
+  color: #49337f;
+  font-family: "Russo One", sans-serif;
+}
+
+/* Style for Games */
+.game-card {
+  align-items: center;
+  border: 2px solid white;
+  border-radius: 5px;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  margin-right: 90px;
+  margin-left: 90px;
+}
+.game-card-body {
+  background-color: #ff5959;
+  width: 75%;
+  text-align: center;
+  margin-left: 28px;
+}
+
+.game-card-body a {
+  font-family: "Russo One", sans-serif;
+  color: #49337f;
+}
+
+/* Style for Youtube videos */
 .results-list .videoList {
   padding: 0;
   margin: 0;
@@ -73,6 +152,7 @@ button:hover {
   padding: 0;
   margin-bottom: 4rem;
   display: flex;
+  border-radius: 5px;
 }
 
 .results-list h3 {
@@ -85,6 +165,7 @@ button:hover {
 .results-list .videoList p {
   font-size: 0.8rem;
   overflow: hidden;
+  padding: 10px 15px;
 }
 
 .videoList img {
@@ -96,10 +177,44 @@ button:hover {
 
 .videoList a {
   color: red;
+  font-family: "Russo One", sans-serif;
+  text-decoration: none;
+}
+
+.videoList a:hover {
+  color: #e8e8e8;
+}
+
+@media (min-width: 1110px) {
+  .head {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 /* For Medium screens */
 @media (min-width: 774px) and (max-width: 1116px) {
+  .head {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
+  form {
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .results-list h3 {
     float: left;
     width: 50%;
@@ -119,6 +234,28 @@ button:hover {
 
 /* For smaller screens */
 @media all and (max-width: 773px) {
+  .head {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .fa {
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
   .videoList {
     width: 80vh;
     height: auto;
@@ -145,5 +282,13 @@ button:hover {
   .videoList img {
     margin: 0 auto;
     width: 100%;
+  }
+
+  form {
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
