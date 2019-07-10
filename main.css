@@ -53,6 +53,11 @@ input[type="number"] {
   width: 2.5rem;
 }
 
+button {
+  cursor: pointer;
+  transition: all 0.1s linear;
+}
+
 button,
 input[type="text"] {
   padding: 5px;
@@ -63,6 +68,11 @@ input[type="text"] {
 
 button:hover {
   background-color: #49337f;
+}
+
+button:active {
+  box-shadow: 0 2px 0 #9ea9f0;
+  transform: translateY(3px);
 }
 
 #results-list {
@@ -97,6 +107,14 @@ button:hover {
   max-height: 30rem;
 }
 
+.card-container img {
+  border-radius: 5px;
+}
+
+.card-container img:hover {
+  transform: scale(1.2);
+}
+
 .streamer-card-body {
   background-color: #e8e8e8;
   width: 80%;
@@ -106,6 +124,11 @@ button:hover {
 
 .streamer-card-body a {
   font-family: "Russo One", sans-serif;
+  cursor: pointer;
+}
+
+.streamer-card-body a:hover {
+  color: #ff5959;
 }
 
 .card-text {
@@ -116,7 +139,6 @@ button:hover {
 /* Style for Games */
 .game-card {
   align-items: center;
-  border: 2px solid white;
   border-radius: 5px;
   justify-content: center;
   margin-top: 2rem;
@@ -130,10 +152,17 @@ button:hover {
   text-align: center;
   margin-left: 28px;
 }
+.game-card img {
+  border-radius: 5px;
+}
+.game-card img:hover {
+  transform: scale(1.2);
+}
 
 .game-card-body a {
   font-family: "Russo One", sans-serif;
   color: #49337f;
+  cursor: pointer;
 }
 
 /* Style for Youtube videos */
@@ -155,6 +184,10 @@ button:hover {
   border-radius: 5px;
 }
 
+.videoList:hover {
+  transform: scale(1.1);
+}
+
 .results-list h3 {
   font-size: 1.2rem;
   float: left;
@@ -173,12 +206,14 @@ button:hover {
   width: 30%;
   margin: auto 0;
   overflow: hidden;
+  margin-right: 1rem;
 }
 
 .videoList a {
   color: red;
   font-family: "Russo One", sans-serif;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .videoList a:hover {

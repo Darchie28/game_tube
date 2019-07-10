@@ -208,4 +208,38 @@ function watchForm() {
   });
 }
 
+$("button").click(function() {
+  //animate content
+  $("body").addClass("animate-content");
+
+  $("#results-list")
+    .fadeOut(100)
+    .delay(800)
+    .fadeIn();
+
+  //remove fadeIn class after 1500ms
+  setTimeout(function() {
+    $("body").removeClass("fadeIn");
+  }, 1500);
+});
+
+//on click show page after 100ms
+$("#online").click(function() {
+  setTimeout(function() {
+    $("results").addClass("fadeIn");
+  }, 1500);
+});
+
+$("#ranking").click(function() {
+  setTimeout(function() {
+    $("results").addClass("fadeIn");
+  }, 1500);
+});
+
+$("#search").click(function() {
+  setTimeout(function() {
+    $("results").addClass("fadeIn");
+  }, 1500);
+});
+
 $(watchForm);
