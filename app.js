@@ -232,13 +232,13 @@ $("#online").click(function() {
 
 $("#ranking").click(function() {
   setTimeout(function() {
-    $("results").addClass("fadeIn");
+    $("#results").addClass("fadeIn");
   }, 1500);
 });
 
 $("#search").click(function() {
   setTimeout(function() {
-    $("results").addClass("fadeIn");
+    $("#results").addClass("fadeIn");
   }, 1500);
 });
 
