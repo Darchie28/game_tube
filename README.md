@@ -1,6 +1,7 @@
 # Game_Tube
 
 ### live: https://darchie28.github.io/game_tube/
+#### if the (online or ranking) images differ from the README images, click the button a second time
 
 ### Designed and built for those who love the Twitch  and gaming community. 
 ### Users can view the top ranked games on twitch and also see who is streaming
