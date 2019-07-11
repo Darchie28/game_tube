@@ -18,4 +18,4 @@
 ![alt text](https://github.com/Darchie28/game_tube/blob/master/images/game_tube-streamers.png)
 
 ## Video Display
-![alt text] (https://github.com/Darchie28/game_tube/blob/master/images/game_tube-video.png)
+![alt text](https://github.com/Darchie28/game_tube/blob/master/images/game_tube-video.png)
