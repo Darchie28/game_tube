@@ -11,4 +11,11 @@
 
 ### Technology: HTML, CSS, JQuery
 
+## Game Display
+![alt text](https://github.com/Darchie28/game_tube/blob/master/images/game_tube-games.png)
 
+## Streamer Display
+![alt text](https://github.com/Darchie28/game_tube/blob/master/images/game_tube-streamers.png)
+
+## Video Display
+![alt text] (https://github.com/Darchie28/game_tube/blob/master/images/game_tube-video.png)
